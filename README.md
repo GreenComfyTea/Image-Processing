@@ -5,7 +5,7 @@
 # Features
 - Loading image from file (tested formats are PNG (with and without Alpha Channel), JPG, JPEG, BMP).
 - Saving image to file.
-- Show pixel coordinates, Intensity, RGBa, HSV, CMYK, YUV values.
+- Show pixel coordinates, intensity, RGBa, HSV, CMYK, YUV values.
 - Preview and work with:
   - Grayscale;
   - RGB;
@@ -27,7 +27,7 @@
   - Luma Channel;
   - Color Difference U Channel;
   - Color Difference V Channel.
-- If Image pixel count is bigger than 1920 * 1080 then only RGBa and selected working mode is stored.
+- If image pixel count is bigger than 1920 * 1080 then only RGBa and selected working mode is stored.
 - Otherwise, all modes are loaded into memory.
 - Histogram for grayscale (intensity), red channel, green channel and blue channel.
 - Histogram Stretching (histogram mode specify channels to be modified).
