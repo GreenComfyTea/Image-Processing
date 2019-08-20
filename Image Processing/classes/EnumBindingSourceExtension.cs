@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Markup;
 
-namespace AL140_07
+namespace ImageProcessing
 {
 	public class EnumBindingSourceExtension : MarkupExtension
 	{

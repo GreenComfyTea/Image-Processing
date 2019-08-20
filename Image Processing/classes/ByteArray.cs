@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media;
 
-namespace AL140_07
+namespace ImageProcessing
 {
     public class ByteArray
     {

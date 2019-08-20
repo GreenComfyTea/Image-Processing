@@ -17,7 +17,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace AL140_07
+namespace ImageProcessing
 {
 	public partial class MainWindow : Window
 	{
@@ -193,6 +193,8 @@ namespace AL140_07
 			positionX.Text = "-1";
 			positionY.Text = "-1";
 
+			intensityTextBlock.Text = "-1";
+
 			originalRedTextBlock.Text = "-1";
 			originalGreenTextBlock.Text = "-1";
 			originalBlueTextBlock.Text = "-1";
@@ -222,11 +224,14 @@ namespace AL140_07
 			positionX.Text = x.ToString();
 			positionY.Text = y.ToString();
 
+			byte intensity = Image.GetIntensity(x, y);
 			Color originalRgba = Image.GetRgbaColor(x, y);
 			Color convertedRgba = Image.GetConvertedRgbaColor(x, y);
 			HsvColor hsv = Image.GetHsvColor(x, y);
 			CmykColor cmyk = Image.GetCmykColor(x, y);
 			YuvColor yuv = Image.GetYuvColor(x, y);
+
+			intensityTextBlock.Text = intensity.ToString();
 
 			originalRedTextBlock.Text = originalRgba.R.ToString();
 			originalGreenTextBlock.Text = originalRgba.G.ToString();

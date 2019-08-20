@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AL140_07
+namespace ImageProcessing
 {
 	/*
 	Luma: [0; 1]
