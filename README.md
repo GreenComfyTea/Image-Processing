@@ -1,6 +1,6 @@
 <h1>Image Processing</h1>
 
-<img src="https://i.imgur.com/HLR6yAz.png" />
+<img src="https://i.imgur.com/sbRFma3.png" />
 
 # Features
 - Loading image from file (tested formats are PNG (with and without Alpha Channel), JPG, JPEG, BMP).
