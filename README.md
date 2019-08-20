@@ -113,7 +113,7 @@
 </table>
 
 - High Pass Filter 2:
-<><table>
+<table>
   <tr>
     <td align="center">-1</td>
     <td align="center">-1</td>
@@ -149,6 +149,7 @@
     <td align="center">0</td>
   </tr>
 </table>
+
 - Median Filter (3x3, 5x5, 7x7).
 - Sobel Operator.
 - Robert's Cross Operator.
