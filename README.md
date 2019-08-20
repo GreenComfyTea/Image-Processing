@@ -2,6 +2,14 @@
 
 <img src="https://i.imgur.com/sbRFma3.png" />
 
+# Prerequisites
+- .Net Framework 4.7.2
+- Extended.Wpf.Toolkit 3.5.0 (included)
+- Microsoft.Maps.MapControl.WPF 1.0.0.3 (included)
+- mpolewaczyk.InteractiveDataDisplay.WPF 1.1.0 (included)
+- System.Reactive 4.1.6 (included)
+- WriteableBitmapEx 1.6.2 (included)
+
 # Features
 - Loading image from file (tested formats are PNG (with and without alpha channel), JPG, JPEG, BMP).
 - Saving image to file.
