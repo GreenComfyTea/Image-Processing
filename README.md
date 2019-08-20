@@ -127,7 +127,7 @@
   <tr>
      <td align="center">-1</td>
     <td align="center">-1</td>
-    <td align="center">1-</td>
+    <td align="center">-1</td>
   </tr>
 </table>
 
