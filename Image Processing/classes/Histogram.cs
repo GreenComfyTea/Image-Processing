@@ -163,6 +163,11 @@ namespace ImageProcessing
 					min = BlueMin;
 					max = BlueMax;
 					break;
+				default:
+					array = Intensity;
+					min = IntensityMin;
+					max = IntensityMax;
+					break;
 			}
 
 			byte previousThreshold = 0;
