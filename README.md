@@ -3,30 +3,30 @@
 <img src="https://i.imgur.com/sbRFma3.png" />
 
 # Features
-- Loading image from file (tested formats are PNG (with and without Alpha Channel), JPG, JPEG, BMP).
+- Loading image from file (tested formats are PNG (with and without alpha channel), JPG, JPEG, BMP).
 - Saving image to file.
 - Show pixel coordinates, intensity, RGBa, HSV, CMYK, YUV values.
 - Preview and work with:
   - Grayscale;
   - RGB;
   - RGBa;
-  - Red Channel;
-  - Green Channel;
-  - Blue Channel;
-  - Alpha Channel;
+  - Red channel;
+  - Green channel;
+  - Blue channel;
+  - Alpha channel;
   - HSV;
-  - Hue Channel;
-  - Saturation Channel;
-  - Value Channel;
+  - Hue channel;
+  - Saturation channel;
+  - Value channel;
   - CMYK;
-  - Cyan Channel;
-  - Magenta Channel;
-  - Yellow Channel;
-  - Black Channel;
+  - Cyan channel;
+  - Magenta channel;
+  - Yellow channel;
+  - Black channel;
   - YUV;
-  - Luma Channel;
-  - Color Difference U Channel;
-  - Color Difference V Channel.
+  - Luma channel;
+  - Color difference U channel;
+  - Color difference V channel.
 - If image pixel count is bigger than 1920 * 1080 then only RGBa and selected working mode is stored.
 - Otherwise, all modes are loaded into memory.
 - Histogram for grayscale (intensity), red channel, green channel and blue channel.
