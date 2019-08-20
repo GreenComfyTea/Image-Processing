@@ -5,7 +5,7 @@
 # Features
 - Loading image from file (tested formats are PNG (with and without Alpha Channel), JPG, JPEG, BMP).
 - Saving image to file.
-- Show pixel coordinates, RGBa, HSV, CMYK, YUV values.
+- Show pixel coordinates, Intensity, RGBa, HSV, CMYK, YUV values.
 - Preview and work with:
   - Grayscale;
   - RGB;
