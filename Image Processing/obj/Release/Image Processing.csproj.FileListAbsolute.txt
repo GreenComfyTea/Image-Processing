@@ -1,40 +1,40 @@
-D:\Универ\6 семестр\Krāsu attēlu apstrāde\Image Processing\Image Processing\bin\Release\AL140_07.exe.config
-D:\Универ\6 семестр\Krāsu attēlu apstrāde\Image Processing\Image Processing\bin\Release\AL140_07.exe
-D:\Универ\6 семестр\Krāsu attēlu apstrāde\Image Processing\Image Processing\bin\Release\AL140_07.pdb
-D:\Универ\6 семестр\Krāsu attēlu apstrāde\Image Processing\Image Processing\bin\Release\Microsoft.Maps.MapControl.WPF.dll
-D:\Универ\6 семестр\Krāsu attēlu apstrāde\Image Processing\Image Processing\bin\Release\mpolewaczyk.InteractiveDataDisplay.WPF.dll
-D:\Универ\6 семестр\Krāsu attēlu apstrāde\Image Processing\Image Processing\bin\Release\System.Reactive.dll
-D:\Универ\6 семестр\Krāsu attēlu apstrāde\Image Processing\Image Processing\bin\Release\WriteableBitmapEx.Wpf.dll
-D:\Универ\6 семестр\Krāsu attēlu apstrāde\Image Processing\Image Processing\bin\Release\Xceed.Wpf.AvalonDock.dll
-D:\Универ\6 семестр\Krāsu attēlu apstrāde\Image Processing\Image Processing\bin\Release\Xceed.Wpf.AvalonDock.Themes.Aero.dll
-D:\Универ\6 семестр\Krāsu attēlu apstrāde\Image Processing\Image Processing\bin\Release\Xceed.Wpf.AvalonDock.Themes.Metro.dll
-D:\Универ\6 семестр\Krāsu attēlu apstrāde\Image Processing\Image Processing\bin\Release\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
-D:\Универ\6 семестр\Krāsu attēlu apstrāde\Image Processing\Image Processing\bin\Release\Xceed.Wpf.Toolkit.dll
-D:\Универ\6 семестр\Krāsu attēlu apstrāde\Image Processing\Image Processing\bin\Release\Microsoft.Maps.MapControl.WPF.xml
-D:\Универ\6 семестр\Krāsu attēlu apstrāde\Image Processing\Image Processing\bin\Release\System.Reactive.xml
-D:\Универ\6 семестр\Krāsu attēlu apstrāde\Image Processing\Image Processing\bin\Release\WriteableBitmapEx.Wpf.pdb
-D:\Универ\6 семестр\Krāsu attēlu apstrāde\Image Processing\Image Processing\bin\Release\WriteableBitmapEx.Wpf.xml
-D:\Универ\6 семестр\Krāsu attēlu apstrāde\Image Processing\Image Processing\bin\Release\de\Xceed.Wpf.AvalonDock.resources.dll
-D:\Универ\6 семестр\Krāsu attēlu apstrāde\Image Processing\Image Processing\bin\Release\es\Xceed.Wpf.AvalonDock.resources.dll
-D:\Универ\6 семестр\Krāsu attēlu apstrāde\Image Processing\Image Processing\bin\Release\fr\Xceed.Wpf.AvalonDock.resources.dll
-D:\Универ\6 семестр\Krāsu attēlu apstrāde\Image Processing\Image Processing\bin\Release\hu\Xceed.Wpf.AvalonDock.resources.dll
-D:\Универ\6 семестр\Krāsu attēlu apstrāde\Image Processing\Image Processing\bin\Release\it\Xceed.Wpf.AvalonDock.resources.dll
-D:\Универ\6 семестр\Krāsu attēlu apstrāde\Image Processing\Image Processing\bin\Release\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
-D:\Универ\6 семестр\Krāsu attēlu apstrāde\Image Processing\Image Processing\bin\Release\ro\Xceed.Wpf.AvalonDock.resources.dll
-D:\Универ\6 семестр\Krāsu attēlu apstrāde\Image Processing\Image Processing\bin\Release\ru\Xceed.Wpf.AvalonDock.resources.dll
-D:\Универ\6 семестр\Krāsu attēlu apstrāde\Image Processing\Image Processing\bin\Release\sv\Xceed.Wpf.AvalonDock.resources.dll
-D:\Универ\6 семестр\Krāsu attēlu apstrāde\Image Processing\Image Processing\bin\Release\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
-D:\Универ\6 семестр\Krāsu attēlu apstrāde\Image Processing\Image Processing\obj\Release\Image Processing.csprojAssemblyReference.cache
-D:\Универ\6 семестр\Krāsu attēlu apstrāde\Image Processing\Image Processing\obj\Release\MainWindow.g.cs
-D:\Универ\6 семестр\Krāsu attēlu apstrāde\Image Processing\Image Processing\obj\Release\App.g.cs
-D:\Универ\6 семестр\Krāsu attēlu apstrāde\Image Processing\Image Processing\obj\Release\GeneratedInternalTypeHelper.g.cs
-D:\Универ\6 семестр\Krāsu attēlu apstrāde\Image Processing\Image Processing\obj\Release\AL140_07_MarkupCompile.cache
-D:\Универ\6 семестр\Krāsu attēlu apstrāde\Image Processing\Image Processing\obj\Release\AL140_07_MarkupCompile.lref
-D:\Универ\6 семестр\Krāsu attēlu apstrāde\Image Processing\Image Processing\obj\Release\MainWindow.baml
-D:\Универ\6 семестр\Krāsu attēlu apstrāde\Image Processing\Image Processing\obj\Release\AL140_07.g.resources
-D:\Универ\6 семестр\Krāsu attēlu apstrāde\Image Processing\Image Processing\obj\Release\AL140_07.Properties.Resources.resources
-D:\Универ\6 семестр\Krāsu attēlu apstrāde\Image Processing\Image Processing\obj\Release\Image Processing.csproj.GenerateResource.cache
-D:\Универ\6 семестр\Krāsu attēlu apstrāde\Image Processing\Image Processing\obj\Release\Image Processing.csproj.CoreCompileInputs.cache
-D:\Универ\6 семестр\Krāsu attēlu apstrāde\Image Processing\Image Processing\obj\Release\Image Processing.csproj.CopyComplete
-D:\Универ\6 семестр\Krāsu attēlu apstrāde\Image Processing\Image Processing\obj\Release\AL140_07.exe
-D:\Универ\6 семестр\Krāsu attēlu apstrāde\Image Processing\Image Processing\obj\Release\AL140_07.pdb
+C:\Users\GreenTea\Documents\GitHub\Image-Processing\Image Processing\bin\Release\Image Processing.exe.config
+C:\Users\GreenTea\Documents\GitHub\Image-Processing\Image Processing\bin\Release\Image Processing.exe
+C:\Users\GreenTea\Documents\GitHub\Image-Processing\Image Processing\bin\Release\Image Processing.pdb
+C:\Users\GreenTea\Documents\GitHub\Image-Processing\Image Processing\bin\Release\Microsoft.Maps.MapControl.WPF.dll
+C:\Users\GreenTea\Documents\GitHub\Image-Processing\Image Processing\bin\Release\mpolewaczyk.InteractiveDataDisplay.WPF.dll
+C:\Users\GreenTea\Documents\GitHub\Image-Processing\Image Processing\bin\Release\System.Reactive.dll
+C:\Users\GreenTea\Documents\GitHub\Image-Processing\Image Processing\bin\Release\WriteableBitmapEx.Wpf.dll
+C:\Users\GreenTea\Documents\GitHub\Image-Processing\Image Processing\bin\Release\Xceed.Wpf.AvalonDock.dll
+C:\Users\GreenTea\Documents\GitHub\Image-Processing\Image Processing\bin\Release\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+C:\Users\GreenTea\Documents\GitHub\Image-Processing\Image Processing\bin\Release\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+C:\Users\GreenTea\Documents\GitHub\Image-Processing\Image Processing\bin\Release\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+C:\Users\GreenTea\Documents\GitHub\Image-Processing\Image Processing\bin\Release\Xceed.Wpf.Toolkit.dll
+C:\Users\GreenTea\Documents\GitHub\Image-Processing\Image Processing\bin\Release\Microsoft.Maps.MapControl.WPF.xml
+C:\Users\GreenTea\Documents\GitHub\Image-Processing\Image Processing\bin\Release\System.Reactive.xml
+C:\Users\GreenTea\Documents\GitHub\Image-Processing\Image Processing\bin\Release\WriteableBitmapEx.Wpf.pdb
+C:\Users\GreenTea\Documents\GitHub\Image-Processing\Image Processing\bin\Release\WriteableBitmapEx.Wpf.xml
+C:\Users\GreenTea\Documents\GitHub\Image-Processing\Image Processing\bin\Release\de\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\GreenTea\Documents\GitHub\Image-Processing\Image Processing\bin\Release\es\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\GreenTea\Documents\GitHub\Image-Processing\Image Processing\bin\Release\fr\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\GreenTea\Documents\GitHub\Image-Processing\Image Processing\bin\Release\hu\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\GreenTea\Documents\GitHub\Image-Processing\Image Processing\bin\Release\it\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\GreenTea\Documents\GitHub\Image-Processing\Image Processing\bin\Release\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\GreenTea\Documents\GitHub\Image-Processing\Image Processing\bin\Release\ro\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\GreenTea\Documents\GitHub\Image-Processing\Image Processing\bin\Release\ru\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\GreenTea\Documents\GitHub\Image-Processing\Image Processing\bin\Release\sv\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\GreenTea\Documents\GitHub\Image-Processing\Image Processing\bin\Release\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\GreenTea\Documents\GitHub\Image-Processing\Image Processing\obj\Release\Image Processing.csprojAssemblyReference.cache
+C:\Users\GreenTea\Documents\GitHub\Image-Processing\Image Processing\obj\Release\MainWindow.g.cs
+C:\Users\GreenTea\Documents\GitHub\Image-Processing\Image Processing\obj\Release\App.g.cs
+C:\Users\GreenTea\Documents\GitHub\Image-Processing\Image Processing\obj\Release\GeneratedInternalTypeHelper.g.cs
+C:\Users\GreenTea\Documents\GitHub\Image-Processing\Image Processing\obj\Release\Image Processing_MarkupCompile.cache
+C:\Users\GreenTea\Documents\GitHub\Image-Processing\Image Processing\obj\Release\Image Processing_MarkupCompile.lref
+C:\Users\GreenTea\Documents\GitHub\Image-Processing\Image Processing\obj\Release\MainWindow.baml
+C:\Users\GreenTea\Documents\GitHub\Image-Processing\Image Processing\obj\Release\Image Processing.g.resources
+C:\Users\GreenTea\Documents\GitHub\Image-Processing\Image Processing\obj\Release\ImageProcessing.Properties.Resources.resources
+C:\Users\GreenTea\Documents\GitHub\Image-Processing\Image Processing\obj\Release\Image Processing.csproj.GenerateResource.cache
+C:\Users\GreenTea\Documents\GitHub\Image-Processing\Image Processing\obj\Release\Image Processing.csproj.CoreCompileInputs.cache
+C:\Users\GreenTea\Documents\GitHub\Image-Processing\Image Processing\obj\Release\Image Processing.csproj.CopyComplete
+C:\Users\GreenTea\Documents\GitHub\Image-Processing\Image Processing\obj\Release\Image Processing.exe
+C:\Users\GreenTea\Documents\GitHub\Image-Processing\Image Processing\obj\Release\Image Processing.pdb
