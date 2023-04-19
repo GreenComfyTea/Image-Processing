@@ -23,10 +23,10 @@ namespace ImageProcessing
 
 		public CmykColor()
 		{
-			Cyan = 0;
-			Magenta = 0;
-			Yellow = 0;
-			Black = 0;
+			Cyan = 0d;
+			Magenta = 0d;
+			Yellow = 0d;
+			Black = 0d;
 		}
 
 		public CmykColor(double cyan, double magenta, double yellow, double black)
@@ -35,6 +35,11 @@ namespace ImageProcessing
 			Magenta = magenta;
 			Yellow = yellow;
 			Black = black;
+		}
+
+		public override string ToString()
+		{
+			return string.Format("{0:0.##} {1:0.##} {2:0.##} {3:0.##}", Cyan, Magenta, Yellow, Black);
 		}
 	}
 }
