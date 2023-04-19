@@ -1,0 +1,44 @@
+﻿<Window x:Class="ImageProcessing.HistogramLinearizationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ImageProcessing"
+        xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="HistogramLinearization"
+        Width="640" Height="480"
+		MinWidth="640" MinHeight="480"
+        MaxWidth="640"
+		Background="#AAAAAA"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10" />
+            <RowDefinition />
+            <RowDefinition Height="10" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition />
+            <ColumnDefinition Width="10" />
+        </Grid.ColumnDefinitions>
+
+        <Frame Grid.Row="1" Grid.Column="1" Background="#EEEEEE" />
+
+        <ScrollViewer Grid.Row="1" Grid.Column="1" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
+            <ListView x:Name="histogramLinearizationListView">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Width="50" DisplayMemberBinding="{Binding Path=Xi}">xi</GridViewColumn>
+                        <GridViewColumn Width="150" DisplayMemberBinding="{Binding Path=Hx}">hx</GridViewColumn>
+                        <GridViewColumn Width="150" DisplayMemberBinding="{Binding Path=YHx}">y = Hx</GridViewColumn>
+                        <GridViewColumn Width="150" DisplayMemberBinding="{Binding Path=YHz}">y = Hz</GridViewColumn>
+                        <GridViewColumn Width="50" DisplayMemberBinding="{Binding Path=Zj}">zj</GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView> 
+        </ScrollViewer>
+    </Grid>
+</Window>
