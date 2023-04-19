@@ -11,7 +11,7 @@ namespace ImageProcessing
 	public class Histogram
 	{
 		public static int[] enumerationX = Enumerable.Range(0, 256).ToArray();
-		private IImage Image { get; set; }
+		private MyImage MyImg { get; set; }
 		public int[] Intensity { get; set; }
 		public int[] Red { get; set; }
 		public int[] Green { get; set; }
@@ -32,9 +32,9 @@ namespace ImageProcessing
 
 		private readonly object lockObject = new object();
 
-		public Histogram(IImage image)
+		public Histogram(MyImage image)
 		{
-			Image = image;
+			MyImg = image;
 		}
 
 		public void UpdateHistogram()
@@ -58,13 +58,13 @@ namespace ImageProcessing
 			GreenMaxValue = 0;
 			BlueMaxValue = 0;
 
-			int[] nums = Enumerable.Range(0, Image.Width).ToArray();
+			int[] nums = Enumerable.Range(0, MyImg.Width).ToArray();
 			Parallel.ForEach(nums, x =>
 			{
-				for (int y = 0; y < Image.Height; y++)
+				for (int y = 0; y < MyImg.Height; y++)
 				{
-					Color color = Image.GetRgbaColor(x, y);
-					byte intensity = Image.GetIntensity(x, y);
+					Color color = MyImg.GetRgbaColor(x, y);
+					byte intensity = MyImg.GetIntensity(x, y);
 
 					lock (lockObject)
 					{
@@ -133,7 +133,7 @@ namespace ImageProcessing
 			});
 		}
 
-		public byte CalculateAdaptiveVerticalThreshold(HistogramModes histogramMode)
+		public byte CalculateAdaptiveVerticalThreshold(HistogramMode histogramMode)
 		{
 
 			int[] array = null;
@@ -143,22 +143,22 @@ namespace ImageProcessing
 
 			switch (histogramMode)
 			{
-				case HistogramModes.Intensity:
+				case HistogramMode.Intensity:
 					array = Intensity;
 					min = IntensityMin;
 					max = IntensityMax;
 					break;
-				case HistogramModes.Red:
+				case HistogramMode.Red:
 					array = Red;
 					min = RedMin;
 					max = RedMax;
 					break;
-				case HistogramModes.Green:
+				case HistogramMode.Green:
 					array = Green;
 					min = GreenMin;
 					max = GreenMax;
 					break;
-				case HistogramModes.Blue:
+				case HistogramMode.Blue:
 					array = Blue;
 					min = BlueMin;
 					max = BlueMax;
@@ -195,6 +195,86 @@ namespace ImageProcessing
 				count += array[value];
 			}
 			return Calculations.ClampToByte(sum / count);
+		}
+
+		public double[] GetLinearizationCumulativeIntensity(byte[] newIntensity)
+		{
+			double[] relativeCumulativeIntensity = new double[256];
+
+			double size = MyImg.Width * MyImg.Height;
+
+			double step = 1d / 256d;
+
+			relativeCumulativeIntensity[0] = Intensity[0] / size;
+			newIntensity[0] = Calculations.ClampToByte(Math.Round(relativeCumulativeIntensity[0] / step) - 1d);
+
+			for (int i = 1; i < 256; i++)
+			{
+				relativeCumulativeIntensity[i] = relativeCumulativeIntensity[i - 1] + Intensity[i] / size;
+				newIntensity[i] = Calculations.ClampToByte(Math.Round(relativeCumulativeIntensity[i] / step) - 1d);
+			}
+
+			return relativeCumulativeIntensity;
+		}
+
+		public double[] GetLinearizationCumulativeRed(byte[] newRed)
+		{
+			double[] relativeCumulativeRed = new double[256];
+
+			double size = MyImg.Width * MyImg.Height;
+
+			double step = 1d / 256d;
+
+			relativeCumulativeRed[0] = Red[0] / size;
+			newRed[0] = Calculations.ClampToByte(Math.Round(relativeCumulativeRed[0] / step) - 1d);
+
+			for (int i = 1; i < 256; i++)
+			{
+				relativeCumulativeRed[i] = relativeCumulativeRed[i - 1] + Red[i] / size;
+				newRed[i] = Calculations.ClampToByte(Math.Round(relativeCumulativeRed[i] / step) - 1d);
+			}
+
+			return relativeCumulativeRed;
+		}
+
+		public double[] GetLinearizationCumulativeGreen(byte[] newGreen)
+		{
+			double[] relativeCumulativeGreen = new double[256];
+
+			double size = MyImg.Width * MyImg.Height;
+
+			double step = 1d / 256d;
+
+			relativeCumulativeGreen[0] = Green[0] / size;
+			newGreen[0] = Calculations.ClampToByte(Math.Round(relativeCumulativeGreen[0] / step) - 1d);
+
+			for (int i = 1; i < 256; i++)
+			{
+				relativeCumulativeGreen[i] = relativeCumulativeGreen[i - 1] + Green[i] / size;
+				newGreen[i] = Calculations.ClampToByte(Math.Round(relativeCumulativeGreen[i] / step) - 1d);
+			}
+
+			return relativeCumulativeGreen;
+		}
+
+		public double[] GetLinearizationCumulativeBlue(byte[] newBlue)
+		{
+			double[] relativeCumulativeBlue = new double[256];
+
+			double size = MyImg.Width * MyImg.Height;
+
+			double step = 1d / 256d;
+
+			relativeCumulativeBlue[0] = Blue[0] / size;
+			newBlue[0] = Calculations.ClampToByte(Math.Round(relativeCumulativeBlue[0] / step) - 1d);
+
+			for (int i = 1; i < 256; i++)
+			{
+				relativeCumulativeBlue[i] = relativeCumulativeBlue[i - 1] + Blue[i] / size;
+				newBlue[i] = Calculations.ClampToByte(Math.Round(relativeCumulativeBlue[i] / step) - 1d);
+			}
+
+			return relativeCumulativeBlue;
 		}
 	}
 }
