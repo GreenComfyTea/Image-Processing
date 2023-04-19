@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ImageProcessing
 {
-	public enum ImageModes
+	public enum ImageMode
 	{
 		Grayscale,
 		RGB,
@@ -27,10 +27,30 @@ namespace ImageProcessing
 		YUV,
 		Luma,
 		ColorDifferenceU,
-		ColorDifferenceV
+		ColorDifferenceV,
+		sRGB_Lab,
+		sRGB_Lightness,
+		sRGB_ChromaA,
+		sRGB_ChromaB,
+		AdobeRGB_Lab,
+		AdobeRGB_Lightness,
+		AdobeRGB_ChromaA,
+		AdobeRGB_ChromaB,
+		AppleRGB_Lab,
+		AppleRGB_Lightness,
+		AppleRGB_ChromaA,
+		AppleRGB_ChromaB,
+		ColorMatchRGB_Lab,
+		ColorMatchRGB_Lightness,
+		ColorMatchRGB_ChromaA,
+		ColorMatchRGB_ChromaB,
+		ProPhotoRGB_Lab,
+		ProPhotoRGB_Lightness,
+		ProPhotoRGB_ChromaA,
+		ProPhotoRGB_ChromaB
 	}
 
-	public enum HistogramModes
+	public enum HistogramMode
 	{
 		Intensity,
 		Red,
@@ -38,7 +58,7 @@ namespace ImageProcessing
 		Blue
 	}
 
-	public enum Filters
+	public enum Filter
 	{
 		LowPassFilter1,
 		LowPassFilter2,
@@ -51,10 +71,18 @@ namespace ImageProcessing
 		MedianFilter7x7
 	}
 
-	public enum Operators
+	public enum Operator
 	{
 		SobelOperator,
 		RobertsCrossOperator,
-		PrewittOperator,
+		PrewittOperator
+	}
+
+	public enum Direction
+	{
+		Horizontal,
+		Vertical,
+		MainDiagonal,
+		AntiDiagonal
 	}
 }
