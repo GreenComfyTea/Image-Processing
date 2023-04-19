@@ -9,7 +9,7 @@
         Title="Image Processing"
 		Width="1280" Height="720"
 		MinWidth="1280" MinHeight="720"
-		Background="DarkGray"
+		Background="#AAAAAA"
         WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -28,162 +28,302 @@
             <RowDefinition Height="10" />
         </Grid.RowDefinitions>
 
-        <Frame Grid.Row="1" Grid.Column="1" Background="LightGray" />
-        <Frame Grid.Row="1" Grid.Column="3" Background="LightGray" />
-        <Frame Grid.Row="1" Grid.Column="5" Background="LightGray" />
+        <Frame Grid.Row="1" Grid.Column="1" Background="#EEEEEE" />
+        <Frame Grid.Row="1" Grid.Column="3" Background="#EEEEEE" />
+        <Frame Grid.Row="1" Grid.Column="5" Background="#EEEEEE" />
 
         <Image x:Name="originalImage" Grid.Row="1" Grid.Column="1" MouseMove="MouseMoveOriginal" MouseLeave="MouseLeave" />
-        <Image x:Name="resultImage" Grid.Row="1" Grid.Column="3"  MouseMove="MouseMoveResult" MouseLeave="MouseLeave" />
+        <Image x:Name="resultImage" Grid.Row="1" Grid.Column="3"  MouseMove="MouseMoveResult" MouseLeave="MouseLeave" MouseLeftButtonDown="MouseLeftButtonDownResult" MouseLeftButtonUp="MouseLeftButtonUpResult" />
 
-        <StackPanel Grid.Row="1" Grid.Column="5" Orientation="Vertical" Margin="5" >
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition />
-                    <RowDefinition Height="5" />
-                    <RowDefinition />
-                    <RowDefinition Height="5"/>
-                </Grid.RowDefinitions>
+        <ScrollViewer Grid.Row="1" Grid.Column="5" >
+            <StackPanel  Orientation="Vertical" Margin="5" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition Height="5" />
+                        <RowDefinition />
+                        <RowDefinition Height="5"/>
+                        <RowDefinition />
+                        <RowDefinition Height="5"/>
+                    </Grid.RowDefinitions>
 
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition Width="5" />
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
-                
-                <Button x:Name="loadImageButton" Grid.Row="0" Grid.Column="0" Content="Load Image" Click="LoadImage" />
-                <Button x:Name="saveImageButton" Grid.Row="0" Grid.Column="2" Content="Save Image" Click="SaveImage" IsEnabled="False" />
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="5" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
 
-                <ComboBox x:Name="imageModeComboBox" Grid.Row="2" Grid.Column="0" ItemsSource="{Binding Source={local:EnumBindingSource {x:Type local:ImageModes}}}" IsEnabled="false" SelectedIndex="-1" SelectionChanged="ImageModeComboBoxSelectionChanged" />
-                <Button x:Name="restoreButton" Grid.Row="2" Grid.Column="2" Content="Restore Original" Click="RestoreOriginal" IsEnabled="False" />
-            </Grid>
+                    <Button x:Name="loadImageButton" Grid.Row="0" Grid.Column="0" Content="Load Image" Click="LoadImage" />
+                    <Button x:Name="saveImageButton" Grid.Row="0" Grid.Column="2" Content="Save Image" Click="SaveImage" IsEnabled="False" />
 
-            <Grid Margin="0, 5, 0, 0">
-                <Grid.RowDefinitions>
-                    <RowDefinition />
-                    <RowDefinition Height="5" />
-                    <RowDefinition />
-                    <RowDefinition Height="5" />
-                    <RowDefinition />
-                    <RowDefinition Height="5" />
-                    <RowDefinition />
-                    <RowDefinition Height="5" />
-                    <RowDefinition />
-                    <RowDefinition Height="5" />
-                    <RowDefinition />
-                    <RowDefinition Height="5" />
-                    <RowDefinition />
-                </Grid.RowDefinitions>
+                    <ComboBox x:Name="imageModeComboBox" Grid.Row="2" Grid.ColumnSpan="3" ItemsSource="{Binding Source={local:EnumBindingSource {x:Type local:ImageMode}}}" IsEnabled="false" SelectedIndex="-1" SelectionChanged="ImageModeComboBoxSelectionChanged" />
+                    
+                    <Button x:Name="convertToGrayscaleButton" Grid.Row="4" Grid.Column="0" Content="Convert to Grayscale" Click="ConvertToGrayscale" IsEnabled="False" />
+                    <Button x:Name="restoreButton" Grid.Row="4" Grid.Column="2" Content="Restore Original" Click="RestoreOriginal" IsEnabled="False" />
+                </Grid>
 
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
+                <Grid Margin="0, 5, 0, 0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition Height="5" />
+                        <RowDefinition />
+                        <RowDefinition Height="5" />
+                        <RowDefinition />
+                        <RowDefinition Height="5" />
+                        <RowDefinition />
+                        <RowDefinition Height="5" />
+                        <RowDefinition />
+                        <RowDefinition Height="5" />
+                        <RowDefinition />
+                        <RowDefinition Height="5" />
+                        <RowDefinition />
+                        <RowDefinition Height="5" />
+                        <RowDefinition />
+                        <RowDefinition Height="5" />
+                        <RowDefinition />
+                        <RowDefinition Height="5" />
+                        <RowDefinition />
+                        <RowDefinition Height="5" />
+                        <RowDefinition />
+                        <RowDefinition Height="5" />
+                        <RowDefinition />
+                        <RowDefinition Height="5" />
+                        <RowDefinition />
+                        <RowDefinition Height="5" />
+                        <RowDefinition />
+                        <RowDefinition Height="5" />
+                        <RowDefinition />
+                        <RowDefinition Height="5" />
+                        <RowDefinition />
+                        <RowDefinition Height="5" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="0" Grid.Column="0" Text="Position:" VerticalAlignment="Center" />
-                <TextBlock Grid.Row="0" Grid.Column="1" x:Name="positionX" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
-                <TextBlock Grid.Row="0" Grid.Column="2" x:Name="positionY" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
 
-                <TextBlock Grid.Row="2" Grid.Column="0" Text="Grayscale (Intensity):" VerticalAlignment="Center" />
-                <TextBlock Grid.Row="2" Grid.Column="1" x:Name="intensityTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Position:" VerticalAlignment="Center" />
+                    <TextBlock Grid.Row="0" Grid.Column="1" x:Name="positionX" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
+                    <TextBlock Grid.Row="0" Grid.Column="2" x:Name="positionY" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
 
-                <TextBlock Grid.Row="4" Grid.Column="0" Text="Original RGBa:" VerticalAlignment="Center" />
-                <TextBlock Grid.Row="4" Grid.Column="1" x:Name="originalRedTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
-                <TextBlock Grid.Row="4" Grid.Column="2" x:Name="originalGreenTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
-                <TextBlock Grid.Row="4" Grid.Column="3" x:Name="originalBlueTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
-                <TextBlock Grid.Row="4" Grid.Column="4" x:Name="originalAlphaTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="Grayscale (Intensity):" VerticalAlignment="Center" />
+                    <TextBlock Grid.Row="2" Grid.Column="1" x:Name="intensityTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
 
-                <TextBlock Grid.Row="6" Grid.Column="0" Text="Converted RGBa:" VerticalAlignment="Center" />
-                <TextBlock Grid.Row="6" Grid.Column="1" x:Name="convertedRedTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
-                <TextBlock Grid.Row="6" Grid.Column="2" x:Name="convertedGreenTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
-                <TextBlock Grid.Row="6" Grid.Column="3" x:Name="convertedBlueTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
-                <TextBlock Grid.Row="6" Grid.Column="4" x:Name="convertedAlphaTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
+                    <TextBlock Grid.Row="4" Grid.Column="0" Text="Original RGBa:" VerticalAlignment="Center" />
+                    <TextBlock Grid.Row="4" Grid.Column="1" x:Name="originalRedTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
+                    <TextBlock Grid.Row="4" Grid.Column="2" x:Name="originalGreenTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
+                    <TextBlock Grid.Row="4" Grid.Column="3" x:Name="originalBlueTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
+                    <TextBlock Grid.Row="4" Grid.Column="4" x:Name="originalAlphaTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
 
-                <TextBlock Grid.Row="8" Grid.Column="0" Text="HSV:" VerticalAlignment="Center" />
-                <TextBlock Grid.Row="8" Grid.Column="1" x:Name="hueTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
-                <TextBlock Grid.Row="8" Grid.Column="2" x:Name="saturationTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
-                <TextBlock Grid.Row="8" Grid.Column="3" x:Name="valueTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
+                    <TextBlock Grid.Row="6" Grid.Column="0" Text="Converted RGBa:" VerticalAlignment="Center" />
+                    <TextBlock Grid.Row="6" Grid.Column="1" x:Name="convertedRedTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
+                    <TextBlock Grid.Row="6" Grid.Column="2" x:Name="convertedGreenTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
+                    <TextBlock Grid.Row="6" Grid.Column="3" x:Name="convertedBlueTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
+                    <TextBlock Grid.Row="6" Grid.Column="4" x:Name="convertedAlphaTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
 
-                <TextBlock Grid.Row="10" Grid.Column="0" Text="CMYK:" VerticalAlignment="Center" />
-                <TextBlock Grid.Row="10" Grid.Column="1" x:Name="cyanTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
-                <TextBlock Grid.Row="10" Grid.Column="2" x:Name="magentaTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
-                <TextBlock Grid.Row="10" Grid.Column="3" x:Name="yellowTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
-                <TextBlock Grid.Row="10" Grid.Column="4" x:Name="blackTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
+                    <TextBlock Grid.Row="8" Grid.Column="0" Text="HSV:" VerticalAlignment="Center" />
+                    <TextBlock Grid.Row="8" Grid.Column="1" x:Name="hueTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
+                    <TextBlock Grid.Row="8" Grid.Column="2" x:Name="saturationTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
+                    <TextBlock Grid.Row="8" Grid.Column="3" x:Name="valueTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
 
-                <TextBlock Grid.Row="12" Grid.Column="0" Text="YUV:" VerticalAlignment="Center" />
-                <TextBlock Grid.Row="12" Grid.Column="1" x:Name="yTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
-                <TextBlock Grid.Row="12" Grid.Column="2" x:Name="uTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
-                <TextBlock Grid.Row="12" Grid.Column="3" x:Name="vTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
-            </Grid>
+                    <TextBlock Grid.Row="10" Grid.Column="0" Text="CMYK:" VerticalAlignment="Center" />
+                    <TextBlock Grid.Row="10" Grid.Column="1" x:Name="cyanTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
+                    <TextBlock Grid.Row="10" Grid.Column="2" x:Name="magentaTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
+                    <TextBlock Grid.Row="10" Grid.Column="3" x:Name="yellowTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
+                    <TextBlock Grid.Row="10" Grid.Column="4" x:Name="blackTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
 
-            <Grid Margin="0, 5, 0, 0">
-                <Grid.RowDefinitions>
-                    <RowDefinition />
-                    <RowDefinition Height="5" />
-                    <RowDefinition />
-                    <RowDefinition Height="5" />
-                    <RowDefinition />
-                    <RowDefinition Height="5" />
-                    <RowDefinition />
-                    <RowDefinition Height="5" />
-                    <RowDefinition />
-                    <RowDefinition Height="5" />
-                    <RowDefinition />
-                    <RowDefinition Height="5" />
-                    <RowDefinition />
-                    <RowDefinition Height="5" />
-                    <RowDefinition />
-                    <RowDefinition Height="5" />
-                    <RowDefinition />
-                    <RowDefinition Height="5" />
-                    <RowDefinition />
-                    <RowDefinition Height="5" />
-                    <RowDefinition />
-                    <RowDefinition Height="5" />
-                    <RowDefinition />
-                </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="12" Grid.Column="0" Text="YUV:" VerticalAlignment="Center" />
+                    <TextBlock Grid.Row="12" Grid.Column="1" x:Name="yTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
+                    <TextBlock Grid.Row="12" Grid.Column="2" x:Name="uTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
+                    <TextBlock Grid.Row="12" Grid.Column="3" x:Name="vTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
 
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition Width="5" />
-                    <ColumnDefinition />
-                    <ColumnDefinition Width="5" />
-                    <ColumnDefinition />
-                    <ColumnDefinition Width="5" />
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Row="14" Grid.Column="0" Text="XYZ (sRGB):" VerticalAlignment="Center" />
+                    <TextBlock Grid.Row="14" Grid.Column="1" x:Name="sRgbXTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
+                    <TextBlock Grid.Row="14" Grid.Column="2" x:Name="sRgbYTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
+                    <TextBlock Grid.Row="14" Grid.Column="3" x:Name="sRgbZTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
 
-                <ComboBox x:Name="histogramModeComboBox" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="7" ItemsSource="{Binding Source={local:EnumBindingSource {x:Type local:HistogramModes}}}" IsEnabled="false" SelectedIndex="0" SelectionChanged="HistogramModeComboBoxSelectionChanged" />
-                <Button x:Name="stretchHistogramButton" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="7" Content="Stretch Histogram" Click="StretchHistogram" IsEnabled="False" />
+                    <TextBlock Grid.Row="16" Grid.Column="0" Text="XYZ (Adobe RGB):" VerticalAlignment="Center" />
+                    <TextBlock Grid.Row="16" Grid.Column="1" x:Name="adobeRgbXTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
+                    <TextBlock Grid.Row="16" Grid.Column="2" x:Name="adobeRgbYTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
+                    <TextBlock Grid.Row="16" Grid.Column="3" x:Name="adobeRgbZTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
 
-                <Button x:Name="adaptiveVerticalThresholdButton" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="7" Content="Adaptive Vertical Threshold" Click="AdaptiveVerticalThreshold" IsEnabled="False" />
+                    <TextBlock Grid.Row="18" Grid.Column="0" Text="XYZ (Apple RGB):" VerticalAlignment="Center" />
+                    <TextBlock Grid.Row="18" Grid.Column="1" x:Name="appleRgbXTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
+                    <TextBlock Grid.Row="18" Grid.Column="2" x:Name="appleRgbYTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
+                    <TextBlock Grid.Row="18" Grid.Column="3" x:Name="appleRgbZTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
 
-                <Slider x:Name="horizontalThresholdSlider" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="5" Minimum="0" Maximum="0" IsSnapToTickEnabled="true" IsEnabled="False" ValueChanged="HorizontalThresholdChanged" />
-                <TextBox x:Name="horizontalThresholdTextBox" Grid.Row="6" Grid.Column="6" Text="0" IsEnabled="False" Focusable="False" />
-                
-                <Button x:Name="horizontalThresholdButton" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="7" Content="Horizontal Threshold" Click="HorizontalThreshold" IsEnabled="False" />
+                    <TextBlock Grid.Row="20" Grid.Column="0" Text="XYZ (ColorMatch RGB):" VerticalAlignment="Center" />
+                    <TextBlock Grid.Row="20" Grid.Column="1" x:Name="colorMatchRgbXTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
+                    <TextBlock Grid.Row="20" Grid.Column="2" x:Name="colorMatchRgbYTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
+                    <TextBlock Grid.Row="20" Grid.Column="3" x:Name="colorMatchRgbZTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
 
-                <Slider x:Name="firstVerticalThresholdSlider" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="5" Minimum="0" Maximum="255" IsSnapToTickEnabled="true" IsEnabled="False" ValueChanged="FirstVerticalThresholdChanged" />
-                <TextBox x:Name="firstVerticalThresholdTextBox" Grid.Row="10" Grid.Column="6" Text="0" IsEnabled="False" Focusable="False" />
-                
-                <Slider x:Name="secondVerticalThresholdSlider" Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="5" Minimum="0" Maximum="255" IsSnapToTickEnabled="true" IsEnabled="False" ValueChanged="SecondVerticalThresholdChanged" />
-                <TextBox x:Name="secondVerticalThresholdTextBox" Grid.Row="12" Grid.Column="6" Grid.ColumnSpan="3" Text="0" IsEnabled="False" />
+                    <TextBlock Grid.Row="22" Grid.Column="0" Text="XYZ (ProPhoto RGB):" VerticalAlignment="Center" />
+                    <TextBlock Grid.Row="22" Grid.Column="1" x:Name="proPhotoRgbXTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
+                    <TextBlock Grid.Row="22" Grid.Column="2" x:Name="proPhotoRgbYTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
+                    <TextBlock Grid.Row="22" Grid.Column="3" x:Name="proPhotoRgbZTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
 
-                <Button x:Name="verticalThresholdButton" Grid.Row="14" Grid.Column="0" Grid.ColumnSpan="7" Content="Vertical Threshold" Click="VerticalThreshold" IsEnabled="False" />
+                    <TextBlock Grid.Row="24" Grid.Column="0" Text="sRgb -> Lab:" VerticalAlignment="Center" />
+                    <TextBlock Grid.Row="24" Grid.Column="1" x:Name="sRgbLabLightnessTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
+                    <TextBlock Grid.Row="24" Grid.Column="2" x:Name="sRgbLabChromaATextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
+                    <TextBlock Grid.Row="24" Grid.Column="3" x:Name="sRgbLabChromaBTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
 
-                <d3:Chart Height="196" Grid.Row="16" Grid.Column="0" Grid.ColumnSpan="7">
-                    <d3:BarGraph Name="histogramChart" Description="Intensity" Color="Black" Padding="10" />
-                </d3:Chart>
+                    <TextBlock Grid.Row="26" Grid.Column="0" Text="Adobe Rgb -> Lab:" VerticalAlignment="Center" />
+                    <TextBlock Grid.Row="26" Grid.Column="1" x:Name="adobeRgbLabLightnessTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
+                    <TextBlock Grid.Row="26" Grid.Column="2" x:Name="adobeRgbLabChromaATextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
+                    <TextBlock Grid.Row="26" Grid.Column="3" x:Name="adobeRgbLabChromaBTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
 
-                <ComboBox x:Name="filtersComboBox" Grid.Row="18" Grid.Column="0" Grid.ColumnSpan="3"  ItemsSource="{Binding Source={local:EnumBindingSource {x:Type local:Filters}}}" IsEnabled="false" SelectedIndex="0" />
-                <Button x:Name="applyFilterButton" Grid.Row="18" Grid.Column="4" Grid.ColumnSpan="3" Content="Apply Filter" Click="ApplyFilter" IsEnabled="False" />
+                    <TextBlock Grid.Row="28" Grid.Column="0" Text="Apple Rgb -> Lab:" VerticalAlignment="Center" />
+                    <TextBlock Grid.Row="28" Grid.Column="1" x:Name="appleRgbLabLightnessTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
+                    <TextBlock Grid.Row="28" Grid.Column="2" x:Name="appleRgbLabChromaATextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
+                    <TextBlock Grid.Row="28" Grid.Column="3" x:Name="appleRgbLabChromaBTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
 
-                <ComboBox x:Name="operatorsComboBox" Grid.Row="20" Grid.Column="0" Grid.ColumnSpan="3" ItemsSource="{Binding Source={local:EnumBindingSource {x:Type local:Operators}}}" IsEnabled="false" SelectedIndex="0" />
-                <Button x:Name="applyOperatorButton" Grid.Row="20" Grid.Column="4" Grid.ColumnSpan="3" Content="Apply Operator" Click="ApplyOperator" IsEnabled="False" />
+                    <TextBlock Grid.Row="30" Grid.Column="0" Text="ColorMatch Rgb -> Lab:" VerticalAlignment="Center" />
+                    <TextBlock Grid.Row="30" Grid.Column="1" x:Name="colorMatchRgbLabLightnessTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
+                    <TextBlock Grid.Row="30" Grid.Column="2" x:Name="colorMatchRgbLabChromaATextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
+                    <TextBlock Grid.Row="30" Grid.Column="3" x:Name="colorMatchRgbLabChromaBTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
 
-            </Grid>
-        </StackPanel>
+                    <TextBlock Grid.Row="32" Grid.Column="0" Text="ProPhoto Rgb -> Lab:" VerticalAlignment="Center" />
+                    <TextBlock Grid.Row="32" Grid.Column="1" x:Name="proPhotoRgbLabLightnessTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
+                    <TextBlock Grid.Row="32" Grid.Column="2" x:Name="proPhotoRgbLabChromaATextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
+                    <TextBlock Grid.Row="32" Grid.Column="3" x:Name="proPhotoRgbLabChromaBTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Text="-1" />
+                </Grid>
+
+                <Grid Margin="0, 5, 0, 0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition Height="5" />
+                        <RowDefinition />
+                        <RowDefinition Height="5" />
+                        <RowDefinition />
+                        <RowDefinition Height="5" />
+                        <RowDefinition />
+                        <RowDefinition Height="5" />
+                        <RowDefinition />
+                        <RowDefinition Height="5" />
+                        <RowDefinition />
+                        <RowDefinition Height="5" />
+                        <RowDefinition />
+                        <RowDefinition Height="5" />
+                        <RowDefinition />
+                        <RowDefinition Height="5" />
+                        <RowDefinition />
+                        <RowDefinition Height="5" />
+                        <RowDefinition />
+                        <RowDefinition Height="5" />
+                        <RowDefinition />
+                        <RowDefinition Height="5" />
+                        <RowDefinition />
+                        <RowDefinition Height="5" />
+                        <RowDefinition />
+                        <RowDefinition Height="5" />
+                        <RowDefinition />
+                        <RowDefinition Height="5" />
+                        <RowDefinition />
+                        <RowDefinition Height="5" />
+                        <RowDefinition />
+                        <RowDefinition Height="5" />
+                        <RowDefinition />
+                        <RowDefinition Height="5" />
+                        <RowDefinition />
+                        <RowDefinition Height="5" />
+                        <RowDefinition />
+                        <RowDefinition Height="5" />
+                        <RowDefinition />
+                        <RowDefinition Height="5" />
+                        <RowDefinition />
+                        <RowDefinition Height="5" />
+                        <RowDefinition />
+                        <RowDefinition Height="5" />
+                        <RowDefinition />
+                        <RowDefinition Height="5" />
+                        <RowDefinition />
+                        <RowDefinition Height="5" />
+                        <RowDefinition />
+                        <RowDefinition Height="5" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="5" />
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="5" />
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="5" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <ComboBox x:Name="histogramModeComboBox" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="7" ItemsSource="{Binding Source={local:EnumBindingSource {x:Type local:HistogramMode}}}" IsEnabled="false" SelectedIndex="0" SelectionChanged="HistogramModeComboBoxSelectionChanged" />
+                    <Button x:Name="stretchHistogramButton" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="7" Content="Stretch Histogram" Click="StretchHistogram" IsEnabled="False" />
+
+                    <Button x:Name="adaptiveVerticalThresholdButton" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="7" Content="Adaptive Vertical Threshold" Click="AdaptiveVerticalThreshold" IsEnabled="False" />
+
+                    <Slider x:Name="horizontalThresholdSlider" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="5" Minimum="0" Maximum="0" IsSnapToTickEnabled="true" IsEnabled="False" ValueChanged="HorizontalThresholdChanged" />
+                    <TextBox x:Name="horizontalThresholdTextBox" Grid.Row="6" Grid.Column="6" Text="0" IsEnabled="False" Focusable="False" />
+
+                    <Button x:Name="horizontalThresholdButton" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="7" Content="Horizontal Threshold" Click="HorizontalThreshold" IsEnabled="False" />
+
+                    <Slider x:Name="firstVerticalThresholdSlider" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="5" Minimum="0" Maximum="255" IsSnapToTickEnabled="true" IsEnabled="False" ValueChanged="FirstVerticalThresholdChanged" />
+                    <TextBox x:Name="firstVerticalThresholdTextBox" Grid.Row="10" Grid.Column="6" Text="0" IsEnabled="False" Focusable="False" />
+
+                    <Slider x:Name="secondVerticalThresholdSlider" Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="5" Minimum="0" Maximum="255" IsSnapToTickEnabled="true" IsEnabled="False" ValueChanged="SecondVerticalThresholdChanged" />
+                    <TextBox x:Name="secondVerticalThresholdTextBox" Grid.Row="12" Grid.Column="6" Grid.ColumnSpan="3" Text="0" IsEnabled="False" Focusable="False" />
+
+                    <Button x:Name="verticalThresholdButton" Grid.Row="14" Grid.Column="0" Grid.ColumnSpan="7" Content="Vertical Threshold" Click="VerticalThreshold" IsEnabled="False" />
+
+                    <Button x:Name="histogramLinearizationButton" Grid.Row="16" Grid.Column="0" Grid.ColumnSpan="3" Content="Histogram Linearization" Click="HistogramLinearization" IsEnabled="False" />
+                    <Button x:Name="showHistogramLinearizationDataButton" Grid.Row="16" Grid.Column="4" Grid.ColumnSpan="3" Content="Show Data" Click="ShowHistogramLinearizationData" IsEnabled="False" />
+                    
+                    <d3:Chart Height="196" Grid.Row="18" Grid.Column="0" Grid.ColumnSpan="7">
+                        <d3:BarGraph Name="histogramChart" Description="Intensity" Color="Black" Padding="10" />
+                    </d3:Chart>
+
+                    <ComboBox x:Name="filtersComboBox" Grid.Row="20" Grid.Column="0" Grid.ColumnSpan="3"  ItemsSource="{Binding Source={local:EnumBindingSource {x:Type local:Filter}}}" IsEnabled="false" SelectedIndex="0" />
+                    <Button x:Name="applyFilterButton" Grid.Row="20" Grid.Column="4" Grid.ColumnSpan="3" Content="Apply Filter" Click="ApplyFilter" IsEnabled="False" />
+
+                    <ComboBox x:Name="operatorsComboBox" Grid.Row="22" Grid.Column="0" Grid.ColumnSpan="3" ItemsSource="{Binding Source={local:EnumBindingSource {x:Type local:Operator}}}" IsEnabled="false" SelectedIndex="0" />
+                    <Button x:Name="applyOperatorButton" Grid.Row="22" Grid.Column="4" Grid.ColumnSpan="3" Content="Apply Operator" Click="ApplyOperator" IsEnabled="False" />
+
+                    <Slider x:Name="gaussianBlurSizeSlider" Grid.Row="24" Grid.Column="0" Grid.ColumnSpan="5" Minimum="3" Maximum="15" IsEnabled="False" ValueChanged="GaussianBlurSizeChanged" IsSnapToTickEnabled="True" TickFrequency="2" />
+                    <TextBox x:Name="gaussianBlurSizeTextBox" Grid.Row="24" Grid.Column="6" Grid.ColumnSpan="3" Text="5" IsEnabled="False" Focusable="False" />
+
+                    <Slider x:Name="gaussianBlurSigmaSlider" Grid.Row="26" Grid.Column="0" Grid.ColumnSpan="5" Minimum="0" Maximum="5" IsEnabled="False" ValueChanged="GaussianBlurSigmaChanged" />
+                    <TextBox x:Name="gaussianBlurSigmaTextBox" Grid.Row="26" Grid.Column="6" Grid.ColumnSpan="3" Text="1.4" IsEnabled="False" Focusable="False" />
+
+                    <Button x:Name="gaussianBlurButton" Grid.Row="28" Grid.Column="0" Grid.ColumnSpan="3" Content="Gaussian Blur" Click="GaussianBlur" IsEnabled="False" />
+                    <Button x:Name="showGaussianFilterDataButton" Grid.Row="28" Grid.Column="4" Grid.ColumnSpan="3" Content="Show Data" Click="ShowGaussianFilterData" IsEnabled="False" />
+                    
+                    <Button x:Name="cannyOperatorButton" Grid.Row="30" Grid.Column="0" Grid.ColumnSpan="7" Content="Canny Operator" Click="CannyOperator" IsEnabled="False" />
+                    
+                    <Slider x:Name="gammaSlider" Grid.Row="32" Grid.Column="0" Grid.ColumnSpan="5" Minimum="0" Maximum="10" IsEnabled="False" ValueChanged="GammaChanged" />
+                    <TextBox x:Name="gammaTextBox" Grid.Row="32" Grid.Column="6" Grid.ColumnSpan="3" Text="1" IsEnabled="False" Focusable="False" />
+                    
+                    <Button x:Name="gammaCorrectionButton" Grid.Row="34" Grid.Column="0" Grid.ColumnSpan="7" Content="Gamma Correction" Click="GammaCorrection" IsEnabled="False" />
+
+                    <Slider x:Name="logarithmConstantSlider" Grid.Row="36" Grid.Column="0" Grid.ColumnSpan="5" Minimum="0" Maximum="5" IsEnabled="False" ValueChanged="LogarithmConstantChanged" />
+                    <TextBox x:Name="logarithmConstantTextBox" Grid.Row="36" Grid.Column="6" Grid.ColumnSpan="3" Text="0" IsEnabled="False" Focusable="False" />
+
+                    <Button x:Name="manualLogarithmicTransformationButton" Grid.Row="38" Grid.Column="0" Grid.ColumnSpan="7" Content="Manual Logarithmic Transformation" Click="ManualLogarithmicTransformation" IsEnabled="False" />
+                    <Button x:Name="adaptiveLogarithmicTransformationButton" Grid.Row="40" Grid.Column="0" Grid.ColumnSpan="7" Content="Adaptive Logarithmic Transformation" Click="AdaptiveLogarithmicTransformation" IsEnabled="False" />
+
+                    <Slider x:Name="exponentConstantSlider" Grid.Row="42" Grid.Column="0" Grid.ColumnSpan="5" Minimum="0" Maximum="10" IsEnabled="False" ValueChanged="ExponentConstantChanged" />
+                    <TextBox x:Name="exponentConstantTextBox" Grid.Row="42" Grid.Column="6" Grid.ColumnSpan="3" Text="1" IsEnabled="False" Focusable="False" />
+
+                    <Button x:Name="exponentialTransformationButton" Grid.Row="44" Grid.Column="0" Grid.ColumnSpan="7" Content="Exponential Transformation" Click="ExponentialTransformation" IsEnabled="False" />
+
+                    <Slider x:Name="regionGrowingThresholdSlider" Grid.Row="46" Grid.Column="0" Grid.ColumnSpan="5" Minimum="0" Maximum="255" Value="30" IsEnabled="False" ValueChanged="RegionGrowingThresholdChanged" IsSnapToTickEnabled="True" />
+                    <TextBox x:Name="regionGrowingThresholdTextBox" Grid.Row="46" Grid.Column="6" Grid.ColumnSpan="3" Text="30" IsEnabled="False" Focusable="False" />
+                    
+                    <CheckBox x:Name="enableRegionGrowingCheckBox" Grid.Row="48" Grid.Column="0" Grid.ColumnSpan="7" Content="Enable Region Growing on Click" IsEnabled="False" />
+                    
+                    <Button x:Name="automaticRegionGrowingButton" Grid.Row="50" Grid.Column="0" Grid.ColumnSpan="7" Content="Automatic Region Growing" Click="AutomaticRegionGrowing" IsEnabled="False" />
+                </Grid>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Window>
