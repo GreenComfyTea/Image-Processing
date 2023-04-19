@@ -20,9 +20,9 @@ namespace ImageProcessing
 
 		public YuvColor()
 		{
-			Luma = 0;
-			ColorDifferenceU = 0;
-			ColorDifferenceV = 0;
+			Luma = 0d;
+			ColorDifferenceU = 0d;
+			ColorDifferenceV = 0d;
 		}
 
 		public YuvColor(double y, double u, double v)
@@ -30,6 +30,11 @@ namespace ImageProcessing
 			Luma = y;
 			ColorDifferenceU = u;
 			ColorDifferenceV = v;
+		}
+
+		public override string ToString()
+		{
+			return string.Format("{0:0.##} {1:0.##} {2:0.##}", Luma , ColorDifferenceU, ColorDifferenceV);
 		}
 	}
 }
